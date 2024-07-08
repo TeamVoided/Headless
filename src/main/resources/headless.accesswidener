@@ -1,3 +1,1 @@
 accessWidener v2 named
-accessible field net/minecraft/client/render/block/entity/SkullBlockEntityRenderer TEXTURES Ljava/util/Map;
-accessible field net/minecraft/client/render/block/entity/SkullBlockEntityRenderer models Ljava/util/Map;

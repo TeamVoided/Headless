@@ -4,6 +4,7 @@
   "package": "org.teamvoided.headless.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "SkullBlockEntityRendererAccessor",
     "SkullBlockEntityRendererMixin"
   ],
   "injectors": {

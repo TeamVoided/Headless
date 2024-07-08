@@ -7,5 +7,6 @@ class CustomSkullType(val type: String) : SkullType {
     override fun toString(): String = type.uppercase()
     companion object {
         val HUSK = CustomSkullType("husk")
+        val BOGGED = CustomSkullType("bogged")
     }
 }
