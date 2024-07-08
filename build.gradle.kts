@@ -28,9 +28,9 @@ repositories {
 println("Task: " + gradle.startParameter.taskNames.joinToString(","))
 
 modSettings {
-    entrypoint("main", "org.teamvoided.template.Template::init")
-    entrypoint("client", "org.teamvoided.template.TemplateClient::init")
-    entrypoint("fabric-datagen", "org.teamvoided.template.data.gen.TemplateData")
+    entrypoint("main", "org.teamvoided.headless.Headless::init")
+    entrypoint("client", "org.teamvoided.headless.HeadlessClient::init")
+//    entrypoint("fabric-datagen", "org.teamvoided.template.data.gen.TemplateData")
 
     mixinFile("${modId()}.client.mixins.json")
 //    mixinFile("${modId()}.mixins.json")
@@ -45,14 +45,14 @@ dependencies {
 loom {
     splitEnvironmentSourceSets()
     runs {
-        create("DataGen") {
-            client()
-            ideConfigGenerated(true)
-            vmArg("-Dfabric-api.datagen")
-            vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
-            vmArg("-Dfabric-api.datagen.modid=${modSettings.modId()}")
-            runDir("build/datagen")
-        }
+//        create("DataGen") {
+//            client()
+//            ideConfigGenerated(true)
+//            vmArg("-Dfabric-api.datagen")
+//            vmArg("-Dfabric-api.datagen.output-dir=${file("src/main/generated")}")
+//            vmArg("-Dfabric-api.datagen.modid=${modSettings.modId()}")
+//            runDir("build/datagen")
+//        }
 
         create("TestWorld") {
             client()

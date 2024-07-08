@@ -1,8 +1,8 @@
-projectTitle = "Team Voided Template"
-modId = "template"
-githubRepo = "Teamvoided/TeamVoidedTemplateMod"
+projectTitle = "Headless"
+modId = "headless"
+githubRepo = "Teamvoided/Headless"
 discordServerInviteId = "KZ5Q364hEg"
-authors = [ "WiredTomato", "TheEnderCore" ]
+authors = [ "TheEnderCore" ]
 majorMinecraftVersion = "1.21"
 minecraftVersion = "1.21"
 fabricLoaderVersion = "0.15.11"
@@ -10,9 +10,9 @@ fabricApiVersion = "0.100.6+1.21"
 fabricLangKotlinVersion = "1.11.0+kotlin.2.0.0"
 license = "MIT"
 modules = [ ]
-modDescription = "Template Mod Description"
+modDescription = "Headless Description"
 # Modmenu badges, values can be: [ library, deprecated ]
-badges = [ ]
+badges = [ "library" ]
 disableKotlin = false
 
 [mappings]
