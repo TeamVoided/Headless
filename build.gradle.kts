@@ -33,8 +33,8 @@ modSettings {
 //    entrypoint("fabric-datagen", "org.teamvoided.template.data.gen.TemplateData")
 
     mixinFile("${modId()}.client.mixins.json")
-//    mixinFile("${modId()}.mixins.json")
-//    accessWidener("${modId()}.accesswidener")
+    mixinFile("${modId()}.mixins.json")
+    accessWidener("${modId()}.accesswidener")
 }
 
 dependencies {
