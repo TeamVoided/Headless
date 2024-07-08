@@ -30,7 +30,7 @@ println("Task: " + gradle.startParameter.taskNames.joinToString(","))
 modSettings {
     entrypoint("main", "org.teamvoided.headless.Headless::init")
     entrypoint("client", "org.teamvoided.headless.HeadlessClient::init")
-//    entrypoint("fabric-datagen", "org.teamvoided.template.data.gen.TemplateData")
+    entrypoint("fabric-datagen", "org.teamvoided.headless.data.gen.HeadlessData")
 
     mixinFile("${modId()}.client.mixins.json")
     mixinFile("${modId()}.mixins.json")
