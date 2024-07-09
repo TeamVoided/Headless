@@ -15,6 +15,6 @@ public interface SkullBlockEntityRendererAccessor {
 
     @Accessor("TEXTURES")
     static Map<SkullBlock.SkullType, Identifier> headless_TEXTURES() {
-        throw new AssertionError("");
+        throw new AssertionError("Mixin failed! Please send help!");
     }
 }
