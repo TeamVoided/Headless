@@ -16,6 +16,9 @@ object HeadlessClient {
     val HUSK_HEAD = register("husk_head", "main")
     val husk_png = Identifier.ofDefault("textures/entity/zombie/husk.png")
 
+    val STRAY_HEAD = register("stray_head", "main")
+    val stray_png = Identifier.ofDefault("textures/entity/skeleton/stray.png")
+
     fun init() {
         log.info("Hello from Client")
 
@@ -26,6 +29,10 @@ object HeadlessClient {
         EntityModelLayerRegistry.registerModelLayer(HUSK_HEAD, SkullBlockEntityModel::getHeadTexturedModelData)
         HeadlessRegistry.registerSkull(CustomSkullType.HUSK, husk_png)
         { SkullBlockEntityModel(it.getModelPart(HUSK_HEAD)) }
+
+        EntityModelLayerRegistry.registerModelLayer(STRAY_HEAD, SkullBlockEntityModel::getSkullTexturedModelData)
+        HeadlessRegistry.registerSkull(CustomSkullType.STRAY, stray_png)
+        { SkullBlockEntityModel(it.getModelPart(STRAY_HEAD)) }
 
     }
 

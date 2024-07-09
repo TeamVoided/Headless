@@ -8,5 +8,6 @@ class CustomSkullType(val type: String) : SkullType {
     companion object {
         val HUSK = CustomSkullType("husk")
         val BOGGED = CustomSkullType("bogged")
+        val STRAY = CustomSkullType("stray")
     }
 }

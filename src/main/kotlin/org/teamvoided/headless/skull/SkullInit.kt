@@ -38,10 +38,23 @@ object SkullInit {
         id("bogged_skull"), SkullItem(BOGGED_SKULL_BLOCK, BOGGED_SKULL_WALL_BLOCK, Item.Settings())
     )
 
+    val STRAY_SKULL_BLOCK = Registries.BLOCK.register(
+        id("stray_skull"),
+        HeadlessSkull(CustomSkullType.STRAY, AbstractBlock.Settings.copy(Blocks.SKELETON_SKULL))
+    )
+    val STRAY_SKULL_WALL_BLOCK = Registries.BLOCK.register(
+        id("stray_wall_skull"),
+        HeadlessWallSkull(CustomSkullType.STRAY, AbstractBlock.Settings.copy(Blocks.SKELETON_SKULL))
+    )
+    val STRAY_SKULL_ITEM = Registries.ITEM.register(
+        id("stray_skull"), SkullItem(STRAY_SKULL_BLOCK, STRAY_SKULL_WALL_BLOCK, Item.Settings())
+    )
+
     fun init() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register {
             it.prepend(HUSK_SKULL_ITEM)
             it.prepend(BOGGED_SKULL_ITEM)
+            it.prepend(STRAY_SKULL_ITEM)
         }
     }
 }
