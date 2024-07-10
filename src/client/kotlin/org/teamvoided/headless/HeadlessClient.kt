@@ -5,6 +5,7 @@ import net.minecraft.client.render.block.entity.model.SkullBlockEntityModel
 import net.minecraft.client.render.entity.model.EntityModelLayer
 import net.minecraft.util.Identifier
 import org.teamvoided.headless.Headless.id
+import org.teamvoided.headless.render.block.entity.model.SkullWithOverlayModel
 import org.teamvoided.headless.skull.SkullInit
 
 @Suppress("unused")

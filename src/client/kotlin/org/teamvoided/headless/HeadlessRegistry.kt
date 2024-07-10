@@ -7,6 +7,7 @@ import net.minecraft.client.render.entity.model.EntityModelLoader
 import net.minecraft.util.Identifier
 import org.teamvoided.headless.Headless.id
 import org.teamvoided.headless.mixin.SkullBlockEntityRendererAccessor
+import org.teamvoided.headless.render.block.entity.model.SkullWithOverlayModel
 import org.teamvoided.headless.skull.CustomSkullType
 
 object HeadlessRegistry {

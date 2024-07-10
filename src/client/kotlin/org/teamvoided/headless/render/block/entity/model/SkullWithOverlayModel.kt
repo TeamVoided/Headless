@@ -1,4 +1,4 @@
-package org.teamvoided.headless
+package org.teamvoided.headless.render.block.entity.model
 
 import com.mojang.blaze3d.vertex.VertexConsumer
 import net.minecraft.client.MinecraftClient
