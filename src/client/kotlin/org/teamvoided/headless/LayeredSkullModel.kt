@@ -29,32 +29,6 @@ open class LayeredSkullModel(root: ModelPart, hat: ModelPart,  layer: Identifier
     }
 
     companion object {
-        fun makeHed(): ModelData {
-            val modelData = ModelData()
-            val modelPartData = modelData.root
-            modelPartData.addChild(
-                "head",
-                ModelPartBuilder.create()
-                    .uv(0, 0)
-                    .cuboid(-4.0f, -8.0f, -4.0f, 8.0f, 8.0f, 8.0f),
-                ModelTransform.NONE
-            )
-            modelPartData.addChild(
-                "hat",
-                ModelPartBuilder.create()
-                    .uv(0, 0)
-                    .cuboid(-4.0f, -8.0f, -4.0f, 8.0f, 8.0f, 8.0f, Dilation(0.25f)),
-                ModelTransform.NONE
-            )
-
-            return modelData
-        }
-
-        fun getHeadTexturedModelData(): TexturedModelData {
-            val meshdefinition = makeHed()
-            return TexturedModelData.of(meshdefinition, 64, 64)
-        }
-
         fun getSkullTexturedModelData(): TexturedModelData {
             val modelData = ModelData()
             val modelPartData = modelData.root
