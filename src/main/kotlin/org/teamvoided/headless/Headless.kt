@@ -13,7 +13,6 @@ object Headless {
     val log: Logger = LoggerFactory.getLogger(Headless::class.simpleName)
 
     fun init() {
-        log.info("Hello from Common")
         SkullInit.init()
     }
 

@@ -13,7 +13,7 @@ object HeadlessRegistry {
     private val SKULLS: MutableMap<CustomSkullType, (EntityModelLoader) -> AbstractSkullBlockEntityModel> =
         mutableMapOf()
 
-    fun registerSkull(
+    fun register(
         type: CustomSkullType,
         texture: Identifier,
         model: (EntityModelLoader) -> AbstractSkullBlockEntityModel
@@ -28,9 +28,9 @@ object HeadlessRegistry {
         val headOverlay = register("${type.type}_head", "overlay")
         EntityModelLayerRegistry.registerModelLayer(head, LayeredSkullModel::getSkullTexturedModelData)
         EntityModelLayerRegistry.registerModelLayer(headOverlay, LayeredSkullModel::getSkullTexturedModelOverlayData)
+
         SkullBlockEntityRendererAccessor.headless_TEXTURES()[type] = texture
-        SKULLS[type] =
-            { LayeredSkullModel(it.getModelPart(head), it.getModelPart(headOverlay), overlayTexture) }
+        SKULLS[type] = { LayeredSkullModel(it.getModelPart(head), it.getModelPart(headOverlay), overlayTexture) }
     }
 
     @JvmStatic
