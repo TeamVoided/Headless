@@ -26,11 +26,11 @@ object HeadlessRegistry {
     fun registerLayeredSkull(type: CustomSkullType, texture: Identifier, overlayTexture: Identifier) {
         val head = register("${type.type}_head", "main")
         val headOverlay = register("${type.type}_head", "overlay")
-        EntityModelLayerRegistry.registerModelLayer(head, LayeredSkullModel::getSkullTexturedModelData)
-        EntityModelLayerRegistry.registerModelLayer(headOverlay, LayeredSkullModel::getSkullTexturedModelOverlayData)
+        EntityModelLayerRegistry.registerModelLayer(head, SkullWithOverlayModel::getSkullTexturedModelData)
+        EntityModelLayerRegistry.registerModelLayer(headOverlay, SkullWithOverlayModel::getSkullTexturedModelOverlayData)
 
         SkullBlockEntityRendererAccessor.headless_TEXTURES()[type] = texture
-        SKULLS[type] = { LayeredSkullModel(it.getModelPart(head), it.getModelPart(headOverlay), overlayTexture) }
+        SKULLS[type] = { SkullWithOverlayModel(it.getModelPart(head), it.getModelPart(headOverlay), overlayTexture) }
     }
 
     @JvmStatic

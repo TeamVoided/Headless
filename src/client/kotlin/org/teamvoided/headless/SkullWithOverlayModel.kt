@@ -9,8 +9,8 @@ import net.minecraft.client.util.math.MatrixStack
 import net.minecraft.util.Identifier
 
 @ExperimentalStdlibApi
-open class LayeredSkullModel(root: ModelPart, hat: ModelPart,  layer: Identifier) : SkullBlockEntityModel(root) {
-    val OUTER_LAYER: RenderLayer = RenderLayer.getEntityCutoutNoCullZOffset(layer)
+open class SkullWithOverlayModel(root: ModelPart, hat: ModelPart, layer: Identifier) : SkullBlockEntityModel(root) {
+    val overlayLayer: RenderLayer = RenderLayer.getEntityCutoutNoCullZOffset(layer)
     protected val hat: ModelPart = hat.getChild("hat")
 
     override fun setHeadAngles(animationProgress: Float, yaw: Float, pitch: Float) {
@@ -23,9 +23,9 @@ open class LayeredSkullModel(root: ModelPart, hat: ModelPart,  layer: Identifier
         super.method_2828(matrices, vertexConsumer, i, j, k)
 
         val provider = MinecraftClient.getInstance().bufferBuilders.entityVertexConsumers
-        val buffer = provider.getBuffer(OUTER_LAYER)
+        val buffer = provider.getBuffer(overlayLayer)
         hat.method_22699(matrices, buffer, i, j, k)
-        provider.draw(OUTER_LAYER)
+        provider.draw(overlayLayer)
     }
 
     companion object {

@@ -5,7 +5,6 @@ import net.minecraft.client.render.block.entity.model.SkullBlockEntityModel
 import net.minecraft.client.render.entity.model.EntityModelLayer
 import net.minecraft.util.Identifier
 import org.teamvoided.headless.Headless.id
-import org.teamvoided.headless.Headless.log
 import org.teamvoided.headless.skull.SkullInit
 
 @Suppress("unused")
@@ -26,12 +25,12 @@ object HeadlessClient {
         EntityModelLayerRegistry.registerModelLayer(HUSK_HEAD, SkullBlockEntityModel::getHeadTexturedModelData)
         HeadlessRegistry.register(SkullInit.HUSK, husk_png) { SkullBlockEntityModel(it.getModelPart(HUSK_HEAD)) }
 
-        EntityModelLayerRegistry.registerModelLayer(BOGGED_HEAD, LayeredSkullModel::getSkullTexturedModelData)
+        EntityModelLayerRegistry.registerModelLayer(BOGGED_HEAD, SkullWithOverlayModel::getSkullTexturedModelData)
         EntityModelLayerRegistry.registerModelLayer(
-            BOGGED_HEAD_OVERLAY, LayeredSkullModel::getSkullTexturedModelOverlayData
+            BOGGED_HEAD_OVERLAY, SkullWithOverlayModel::getSkullTexturedModelOverlayData
         )
         HeadlessRegistry.register(SkullInit.BOGGED, bogged_png)
-        { LayeredSkullModel(it.getModelPart(BOGGED_HEAD), it.getModelPart(BOGGED_HEAD_OVERLAY), bogged_png2) }
+        { SkullWithOverlayModel(it.getModelPart(BOGGED_HEAD), it.getModelPart(BOGGED_HEAD_OVERLAY), bogged_png2) }
 
         HeadlessRegistry.registerLayeredSkull(SkullInit.STRAY, stray_png, stray_png2)
     }
