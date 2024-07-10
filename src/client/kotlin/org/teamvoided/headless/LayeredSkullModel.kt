@@ -8,6 +8,7 @@ import net.minecraft.client.render.block.entity.model.SkullBlockEntityModel
 import net.minecraft.client.util.math.MatrixStack
 import net.minecraft.util.Identifier
 
+@ExperimentalStdlibApi
 open class LayeredSkullModel(root: ModelPart, hat: ModelPart,  layer: Identifier) : SkullBlockEntityModel(root) {
     val OUTER_LAYER: RenderLayer = RenderLayer.getEntityCutoutNoCullZOffset(layer)
     protected val hat: ModelPart = hat.getChild("hat")

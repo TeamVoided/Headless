@@ -23,6 +23,7 @@ object HeadlessClient {
     val stray_png = Identifier.ofDefault("textures/entity/skeleton/stray.png")
     val stray_png2 = Identifier.ofDefault("textures/entity/skeleton/stray_overlay.png")
 
+    @OptIn(ExperimentalStdlibApi::class)
     fun init() {
         log.info("Hello from Client")
 
@@ -35,10 +36,10 @@ object HeadlessClient {
         HeadlessRegistry.registerSkull(CustomSkullType.BOGGED, bogged_png)
         { LayeredSkullModel(it.getModelPart(BOGGED_HEAD), it.getModelPart(BOGGED_HEAD_OVERLAY), bogged_png2) }
 
-        EntityModelLayerRegistry.registerModelLayer(STRAY_HEAD, LayeredSkullModel::getSkullTexturedModelData)
-        EntityModelLayerRegistry.registerModelLayer(STRAY_HEAD_OVERLAY, LayeredSkullModel::getSkullTexturedModelOverlayData)
-        HeadlessRegistry.registerSkull(CustomSkullType.STRAY, stray_png)
-        { LayeredSkullModel(it.getModelPart(STRAY_HEAD), it.getModelPart(STRAY_HEAD_OVERLAY), stray_png2) }
+//        EntityModelLayerRegistry.registerModelLayer(STRAY_HEAD, LayeredSkullModel::getSkullTexturedModelData)
+//        EntityModelLayerRegistry.registerModelLayer(STRAY_HEAD_OVERLAY, LayeredSkullModel::getSkullTexturedModelOverlayData)
+        HeadlessRegistry.registerLayeredSkull(CustomSkullType.STRAY, stray_png, stray_png2)
+//        { LayeredSkullModel(it.getModelPart(STRAY_HEAD), it.getModelPart(STRAY_HEAD_OVERLAY), stray_png2) }
 
     }
 
